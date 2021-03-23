@@ -23,5 +23,6 @@ build/
 lib/
 .idea/
 cmake-build-debug/
+Thirdparty/opencv/
 
 
