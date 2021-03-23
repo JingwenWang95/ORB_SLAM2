@@ -28,22 +28,21 @@ endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV 3.0 QUIET)
-if(NOT OpenCV_FOUND)
-   find_package(OpenCV 2.4.3 QUIET)
-   if(NOT OpenCV_FOUND)
-      message(FATAL_ERROR "OpenCV > 2.4.3 not found.")
-   endif()
-endif()
+set(OpenCV_DIR ${PROJECT_SOURCE_DIR}/Thirdparty/opencv/install/share/OpenCV)
+find_package(OpenCV 3.2 REQUIRED)
+message("OpenCV_INCLUDE_DIRS: ${OpenCV_INCLUDE_DIRS}")
 
 find_package(Eigen3 3.1.0 REQUIRED)
+message("EIGEN3_INCLUDE_DIR: ${EIGEN3_INCLUDE_DIR}")
 find_package(Pangolin REQUIRED)
+message("Pangolin_INCLUDE_DIRS: ${Pangolin_INCLUDE_DIRS}")
 
 include_directories(
-${PROJECT_SOURCE_DIR}
-${PROJECT_SOURCE_DIR}/include
-${EIGEN3_INCLUDE_DIR}
-${Pangolin_INCLUDE_DIRS}
+        ${PROJECT_SOURCE_DIR}
+        ${PROJECT_SOURCE_DIR}/include
+        ${OpenCV_INCLUDE_DIRS}
+        ${EIGEN3_INCLUDE_DIR}
+        ${Pangolin_INCLUDE_DIRS}
 )
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
