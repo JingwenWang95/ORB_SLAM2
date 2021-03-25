@@ -94,6 +94,10 @@ You only need to run ORB-SLAM on the KITTI sequences that we provided for you on
 # 5. Evaluation Tools
 We recommend you to use EVO tool https://github.com/MichaelGrupp/evo for evaluating the performance of ORB-SLAM2. You can simply install it via `pip`. For more detailed instructions please refer to their GitHub page.
 
-As you are running in monocular mode, the camera trajectory will suffer from scale ambiguity and scale drift. So you will need to do 7-DoF alignment between the estimated trajectory and the groundtruth. This can be done by specifying the option `--align` and `--correct_scale`, or simply `as`. 
+As you are running in monocular mode, the camera trajectory will suffer from scale ambiguity and scale drift. So you will need to do 7-DoF alignment between the estimated trajectory and the groundtruth. This can be done by specifying the option `--align` and `--correct_scale`, or simply `-as`. 
 
-But EVO can only do the scale alignment on sequences 
+EVO can only do the scale alignment on sequences with timestamps, but KITTI poses file doesn't have timestamps. To solve this issue, we will save the camera trajectories in TUM format. To make it consistent with the groundtruth data format, you need to convert the groundtruth poses file to TUM format. We have provided a python script for you to do this under Evaluation/
+
+```
+python kitti_to_tum.py <groundtruth-file> <times-file> <output-file>
+```
