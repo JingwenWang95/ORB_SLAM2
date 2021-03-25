@@ -94,4 +94,6 @@ You only need to run ORB-SLAM on the KITTI sequences that we provided for you on
 # 5. Evaluation Tools
 We recommend you to use EVO tool https://github.com/MichaelGrupp/evo for evaluating the performance of ORB-SLAM2. You can simply install it via `pip`. For more detailed instructions please refer to their GitHub page.
 
-As you are running in monocular mode, the camera trajectory will suffer from scale ambiguity and scale drift. So you will need to do 7-DoF alignment between the estimated trajectory and the groundtruth. This can be done by specifying the option `--align` and `--correct_scale`, or simply `as`. But EVO can only do the 
+As you are running in monocular mode, the camera trajectory will suffer from scale ambiguity and scale drift. So you will need to do 7-DoF alignment between the estimated trajectory and the groundtruth. This can be done by specifying the option `--align` and `--correct_scale`, or simply `as`. 
+
+But EVO can only do the scale alignment on sequences 
