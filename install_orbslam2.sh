@@ -44,6 +44,7 @@ cmake \
     -DWITH_TIFF=OFF  \
     -DWITH_VTK=OFF  \
     -DWITH_WEBP=OFF  \
+    -DWITH_FFMPEG=OFF \
     ..
 make -j
 make install
