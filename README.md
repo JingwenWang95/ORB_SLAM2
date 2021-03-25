@@ -84,13 +84,6 @@ You only need to run ORB-SLAM on the KITTI sequences that we provided for you on
 ./Examples/Monocular/mono_kitti Vocabulary/ORBvoc.txt Examples/Monocular/KITTIX.yaml PATH_TO_DATASET_FOLDER/dataset/sequences/SEQUENCE_NUMBER PATH_TO_SAVE_TRAJECTORY
 ```
 
-## Stereo Examples
-
-2. Execute the following command. Change `KITTIX.yaml`to KITTI00-02.yaml, KITTI03.yaml or KITTI04-12.yaml for sequence 0 to 2, 3, and 4 to 12 respectively. Change `PATH_TO_DATASET_FOLDER` to the uncompressed dataset folder. Change `SEQUENCE_NUMBER` to 00, 01, 02,.., 11. 
-```
-./Examples/Stereo/stereo_kitti Vocabulary/ORBvoc.txt Examples/Stereo/KITTIX.yaml PATH_TO_DATASET_FOLDER/dataset/sequences/SEQUENCE_NUMBER
-```
-
 # 5. Evaluation Tools
 We recommend you to use EVO tool https://github.com/MichaelGrupp/evo for evaluating the performance of ORB-SLAM2. You can simply install it via `pip`. For more detailed instructions please refer to their GitHub page.
 
