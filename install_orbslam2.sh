@@ -1,6 +1,8 @@
 # Install OpenGL and GLEW (used for Pangolin)
-sudo apt install libgl1-mesa-dev
-sudo sudo apt install libglew-dev
+sudo apt-get install -y \
+    libgl1-mesa-dev \
+    libglew-dev
+
 cd Thirdparty
 # Install OpenCV
 echo "Configuring and building OpenCV ..."
